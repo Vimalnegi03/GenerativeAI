@@ -6,39 +6,65 @@ A modular and extensible playground for experimenting with various Generative AI
 
 ```
 GenerativeAI/
-│
-├── chainOfThoughtsAuto.gemini.py         # Automatic CoT with Gemini
-├── chainOfThoughtsAuto.openAI.py         # Automatic CoT with OpenAI
-├── chainOfThoughtsmanual.gemini.py       # Manual CoT with Gemini
-├── chainOfThoughtsmanual.openAI.py       # Manual CoT with OpenAI
-│
-├── few_shots.gemini.py                   # Few-shot prompting with Gemini
-├── few_shots.openAI.py                   # Few-shot prompting with OpenAI
-│
-├── tokenizer.huggingface.ipynb           # Tokenizer setup using HuggingFace
-├── own_Tokenizer.huggingFace.ipynb       # Custom tokenizer example
-│
-├── embeddings.py                         # Embedding generation utilities
-├── memory_rag.py                         # RAG (Retrieval Augmented Generation)
-│
-├── ollama_api.py                         # Integration with Ollama API
-├── cursor.auto.gemini.py                 # Gemini integration (possibly cursor-like)
-│
-├── docker-compose.yaml                   # Base Compose setup
-├── docker-compose.db.yml                 # DB-specific services
-├── docker-compose.graph.yml              # Graph DB services
-│
-├── Node.pdf                              # Possibly documentation or architecture
-├── check.py                              # Utility script
-├── .gitignore
+├── chainOfThoughts*.py # CoT prompts (manual & auto, OpenAI & Gemini)
+├── few_shots*.py # Few-shot examples
+├── zero_shot_prompting*.py # Zero-shot examples
+├── personaBasedPrompting*.py # Persona-based prompting
+├── role_playing*.py # Role-playing prompt agents
+├── embeddings.py # Embedding generation utility
+├── memory_rag.py # Memory-augmented RAG
+├── recirpocate_rank_fusion_in_rag.py # RRF scoring for RAG
+├── tokenizer*.py # Tokenizer setup (HuggingFace)
+├── ollama_api.py # Ollama integration
+├── weather_agent*.py # Sample agent for weather queries
+├── read*.py # Sample agent used to basically generate markdown of code explanation of each line
+├── sql*.py # Sample agent used to basically used to interact with database using NLP
+├── webscrapper*.py #used to scrap chai_code_docs and generate output used query_routing in this
+├── docker-compose.*.yml # Docker configs
+├── requirements.txt # Dependencies
+├── *.ipynb # Tokenizer experiments
+├── *.pdf # Reference docs
+
 ```
+## 🚀 Features
 
-## 🔧 Requirements
+✅ Chain-of-Thought reasoning with OpenAI & Gemini  
+✅ Few-shot and zero-shot prompt engineering  
+✅ Persona-based and role-playing bots  
+✅ Custom tokenizer using HuggingFace  
+✅ Retrieval-Augmented Generation (RAG) pipelines  
+✅ Reciprocal Rank Fusion scoring for better document retrieval  
+✅ Dockerized microservice-ready setup  
+✅ Integration with Gemini, OpenAI, Ollama APIs  
+✅ Real-world agent demo: Weather Bot,Sql query writer,Mini Cursor,Read me generator
+✅ Web Scrapping with Multi query routing
+✅ Avanced Rags with query translation  
 
-- Python 3.8+
-- Jupyter (for notebooks)
-- Docker & Docker Compose
-- LLM API access (e.g., OpenAI, Gemini, Ollama)
+---
+
+## 🌐 APIs Integrated
+OpenAI GPT-3.5 / GPT-4
+
+Gemini Pro
+
+HuggingFace Transformers
+
+Ollama (local LLM APIs)
+
+## 🧾 Requirements
+All dependencies are listed in requirements.txt. Major libraries:
+
+openai
+
+google-generativeai
+
+langchain
+
+huggingface_hub
+
+transformers
+
+faiss-cpu / chromadb
 
 ## 🚀 How to Run
 
@@ -63,15 +89,37 @@ GenerativeAI/
    - Launch Jupyter: `jupyter notebook`
    - Or run any `.py` script directly with proper API keys configured.
 
-## 🧠 Key Features
+## 📊 Example Use Cases
+🔁 Chain-of-Thought Prompting
+```
+python chainOfThoughtsAuto.openAI.py
 
-- ✅ Chain-of-Thought prompting (manual & automated)
-- ✅ Few-shot learning with prompt templates
-- ✅ HuggingFace tokenizer training
-- ✅ Embedding generation
-- ✅ Retrieval-Augmented Generation (RAG)
-- ✅ Docker-based backend (DB/Graph support)
-- ✅ Multi-provider LLM integration (OpenAI, Gemini, Ollama)
+```
+🧠 Retrieval-Augmented Generation
+
+```
+python memory_rag.py
+
+```
+🎭 Persona Prompting (Gemini)
+```
+python personaBasedPrompting.gemini.py
+
+```
+## 🧪 Notebooks
+
+Tokenizer.huggingface.ipynb: Tokenizer setup using pretrained models
+
+own_Tokenizer.huggingFace.ipynb: Custom tokenizer for domain-specific vocab
+
+# 📌 Notes
+API keys must be stored as environment variables:
+
+OPENAI_API_KEY
+
+GOOGLE_GEMINI_API_KEY
+
+Docker setup supports additional services like vector DB and graph DB.
 
 ## 📄 License
 

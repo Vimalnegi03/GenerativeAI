@@ -4,8 +4,10 @@ load_dotenv()
 import os
 import requests
 import json
+from langsmith.wrappers import wrap_openai
+from langsmith import traceable
 api_key=os.getenv("OPENAI_API_KEY")
-client=OpenAI(api_key=api_key)
+client=wrap_openai(OpenAI(api_key=api_key))
 messages=[]
 def get_weather(city:str):
     return "31 degree"

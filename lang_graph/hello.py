@@ -1,8 +1,8 @@
 from graph2 import graph
 from graph2 import create_chat_graph
 from langgraph.checkpoint.mongodb import MongoDBSaver
-MONGODB_URI="mongodb+srv://@cluster0.up4jy8m.mongodb.net"
-config={"configurable":{"thread_id":"1"}}
+MONGODB_URI="mongodb+srv://vimalnegi2003:Vimal@cluster0.up4jy8m.mongodb.net"
+config={"configurable":{"thread_id":"6"}}
 def init():
     with MongoDBSaver.from_conn_string(MONGODB_URI) as checkpointer:
         graph_with_mongo=create_chat_graph(checkpointer=checkpointer)

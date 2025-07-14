@@ -5,3 +5,4 @@ venv
 whats_app.txt
 wh.zip
 whatsapp_rag.py
+*node_modules

@@ -1,0 +1,8 @@
+{
+    "mcpServers":{
+        "my-servers":{
+            "command":"node",
+            "args":["/Users/Vimal/AI/MCP-WEATHER/index.js"]
+        }
+    }
+}
